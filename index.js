@@ -21,7 +21,7 @@ passport.use(new FacebookTokenStrategy({
         clientID: "1151370004993163",
         clientSecret: "50bb09be87258f04b79883ddb4655512"
     }, function(accessToken, refreshToken, profile, done) {
-        return done(error, "ok");
+        return done(error, profile.id);
 
     }
 ));
@@ -31,7 +31,7 @@ app.post('/auth/facebook/token',
     passport.authenticate('facebook-token'),
     function (req, res) {
         // do something with req.user
-        res.send(req.user? 200 : "error!!!");
+        res.send("ok!!");
     }
 );
 
