@@ -36,6 +36,10 @@ app.post('/auth/facebook/token',
 );
 
 
+app.post('/test', function(request, response){
+    response.send("ok");
+});
+
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
 });
